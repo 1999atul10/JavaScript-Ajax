@@ -1,0 +1,98 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var john_mass=78
+            var john_height=1.69
+            var mark_mass=92
+            var mark_height=1.95
+            var john_BMI=john_mass / (1.69 * 1.69)
+            var mark_BMI=92 / (1.95 * 1.95)
+
+            var markHigherBMI=mark_BMI>john_BMI
+
+       
+
+            console.log(markHigherBMI)
+            //Template Literals
+            console.log(`Mark BMI is = ${mark_BMI}`);
+            console.log(`John BMI is = ${john_BMI}`)
+
+            if(mark_BMI>john_BMI){
+                console.log(`Mark has higher BMI that is ${john_BMI}`)
+            }
+            else
+            {
+                console.log(`John has higher BMI ${mark_BMI}`)
+            }
+            
+            //Type conversion
+
+            var num='121'
+            console.log(typeof(num));
+
+            console.log(typeof(BigInt(num)))
+
+            //Concept of coersion.
+            //Converting one data type to another
+
+            console.log('23'+'23')
+            console.log('23'-'23')
+
+            //falsy value 0,'',undefined,null,NAN
+
+            //const numb=prompt("Enter Number");
+            //console.log(numb)
+
+
+            //Coding challenge 3
+
+            const dolphin_AverageScore=(97+112+101)/3;
+            console.log(`Average Score of team dolphins is ${dolphin_AverageScore}`)
+            const koalas_AverageScore=(109+95+106)/3;
+            console.log(`Average score of koalas is ${koalas_AverageScore}`)
+
+
+            if(dolphin_AverageScore>koalas_AverageScore && dolphin_AverageScore>=100)
+            {
+                console.log(`Winner is Team Dolphin with ${dolphin_AverageScore} score`)
+            }
+            else if(dolphin_AverageScore<koalas_AverageScore && dolphin_AverageScore>=100)
+            {
+                console.log(`Winner is Team Koalas with ${koalas_AverageScore} points`)
+
+            }
+            else if(dolphin_AverageScore===koalas_AverageScore)
+            {
+                console.log('Draw')
+            }
+            else{
+                console.log('No team has been qualified')
+            }
+
+            //end
+
+            //Switch Case
+
+            const day='Tuesday'
+
+            switch(day){
+                case 'Monday':
+                    console.log('Monday')
+                    break;
+                    case 'Tuesday':
+                        console.log('Tuesday')
+                        break;
+                        default:
+                            console.log('Not a valid day')
+            }
+
+
+            //end
+
+
+        </script>
+    </body>
+</html>

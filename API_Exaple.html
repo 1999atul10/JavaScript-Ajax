@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>API</title>
+</head>
+
+<body>
+    <main class="container">
+        <div class="countries">
+            
+              <!-- <article class="country">
+                <img class="country__img" src="" />
+                <div class="country__data">
+                  <h3 class="country__name">COUNTRY</h3>
+                  <h4 class="country__region">REGION</h4>
+                  <p class="country__row"><span>👫</span>POP people</p>
+                  <p class="country__row"><span>🗣️</span>LANG</p>
+                  <p class="country__row"><span>💰</span>CUR</p>
+                </div>
+              </article> -->
+             
+        </div>
+        <!-- <button class="btn-country">Where am I?</button> -->
+        <div class="images"></div>
+
+        <script>
+  //         const countriesCountainer=document.querySelector('.countries')
+  //         var country='portugal'
+  //         const request=new XMLHttpRequest();
+  //         //request.open('GET',`https://restcountries.eu/rest/v2/name/germany`)
+  //         request.open('GET', `https://restcountries.com/v3.1/name/canada`);
+
+  //         request.send()
+  //         request.addEventListener('load',function(){
+  //           const data=JSON.parse(request.responseText)
+  //           console.log(data)
+  //           const html = `
+  //           <article class="country">
+  //         <img class="country__img" src="${data.flag}" />
+  //   <div class="country__data">
+  //     <h3 class="country__name">${data.borders}</h3>
+  //     <h4 class="country__region">${data.region}</h4>
+  //     <p class="country__row"><span>👫</span>${(
+  //       +data.population / 1000000
+  //     ).toFixed(1)} people</p>
+  //     <p class="country__row"><span>🗣️</span>${data.languages}</p>
+  //     <p class="country__row"><span>💰</span>${data.currencies}</p>
+  //   </div>
+  // </article>
+  // `;
+  // countriesCountainer.insertAdjacentHTML('beforeend', html);
+  // countriesCountainer.style.opacity = 1;
+  //         })
+
+  const countriesCountainer = document.querySelector('.countries');
+var country = 'portugal';
+const getCountryData=function(countryName){
+const request = new XMLHttpRequest();
+
+request.open('GET', `https://restcountries.com/v3.1/name/${countryName}`);
+request.send();
+
+request.addEventListener('load', function() {
+  const data = JSON.parse(request.responseText);
+  console.log(data); // Log the data structure to see how to access it
+
+  // Update this part based on the actual structure of the data
+  const html = `
+    <article class="country">
+      <img class="country__img" src="${data[0].flags.png}" />
+      <div class="country__data">
+        <h3 class="country__name">${data[0].name.common}</h3>
+        <h4 class="country__region">${data[0].region}</h4>
+        <p class="country__row"><span>👫</span>${(+data[0].population / 1000000).toFixed(1)} million people</p>
+        <p class="country__row"><span>🗣️</span>${Object.values(data[0].languages).join(', ')}</p>
+      </div>
+    </article>
+  `;
+
+  //countriesCountainer.innerHTML = html; // Insert the HTML into the container
+  countriesCountainer.insertAdjacentHTML('beforebegin', html);
+
+});
+}
+getCountryData("usa")
+getCountryData("canada")
+getCountryData("portugal")
+getCountryData("Bharat")
+getCountryData("pakistan")
+
+
+
+
+        </script>
+</body>
+
+</html>
